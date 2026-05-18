@@ -4,16 +4,38 @@ Adds spec-backed WHY comments to source code, linking implementation details to 
 
 ## Installation
 
+### Per-agent quick reference
+
+| Agent | CLI | Command |
+|-------|-----|---------|
+| **opencode** | `apm` | `apm install hiono/spec-why-commenter --target opencode` |
+| **opencode** | `npx skills` | `npx skills add hiono/spec-why-commenter` |
+| **Claude Code** | `apm` | `apm install hiono/spec-why-commenter --target claude` |
+| **Cursor** | `apm` | `apm install hiono/spec-why-commenter --target cursor` |
+| **Cursor** | `npx skills` | `npx skills add hiono/spec-why-commenter` |
+| **Windsurf** | `npx skills` | `npx skills add hiono/spec-why-commenter` |
+| **Copilot** | `apm` | `apm install hiono/spec-why-commenter --target copilot` |
+| **Gemini Code Assist** | `apm` | `apm install hiono/spec-why-commenter --target gemini` |
+| **Codex CLI** | `apm` | `apm install hiono/spec-why-commenter --target codex` |
+
 ### npx skills (Vercel Labs)
+
+Works with opencode, Cursor, Windsurf, and other Vercel-harness agents:
 
 ```bash
 npx skills add hiono/spec-why-commenter
 ```
 
-### APM (Microsoft)
+### APM (Agent Package Manager)
+
+Works with all targets defined in `apm.yml`:
 
 ```bash
+# Install without target flag (uses all targets from apm.yml)
 apm install hiono/spec-why-commenter
+
+# Or specify your agent explicitly
+apm install hiono/spec-why-commenter --target opencode
 ```
 
 ## Usage
