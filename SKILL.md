@@ -31,7 +31,7 @@ Confirm three things before writing any comment:
 2. **Target files** — if unspecified, prioritize files with register access,
    state machines, or math operations (highest spec-reference density)
 3. **Spec short name** — decide the abbreviation to use in comments
-   (e.g. `EXTERNAL`, `RFC`, `SPEC`, `UM`)
+   (e.g. `SPEC`, `RFC`, `UM`, `DATASHEET`)
 
 ## Comment Language
 
@@ -56,8 +56,8 @@ Use when the spec directly describes what the code does.
 
 Example (C++):
 ```cpp
-// EXTERNAL §3.4: RND[1:0] selects rounding mode; bit2 and above are reserved.
-global_round_mode_ = static_cast<RoundMode>(value & 0x3U);
+// SPEC §3.4: MODE[1:0] selects the operating mode; bit2 and above are reserved.
+current_mode_ = static_cast<Mode>(value & 0x3U);
 ```
 
 Example (Python):
@@ -80,10 +80,10 @@ is written this particular way.
 
 Example:
 ```cpp
-// EXTERNAL §3.20: FCLR register is write-only, write-1-to-clear.
-// WHY: ORDYF (bit2) is cleared by reading OUT register, not by FCLR (EXTERNAL §3.19).
-//      CPRCS (bit0) is a live status bit — not a latched flag — so no FCLR bit exists.
-write_mask_ = 0x0AU;
+// SPEC §3.20: CLR register is write-only, write-1-to-clear.
+// WHY: OVF (bit1) is cleared by reading STATUS register, not by CLR (SPEC §3.19).
+//      RDY (bit0) is a live status bit — not a latched flag — so no CLR bit exists.
+write_mask_ = 0x02U;
 ```
 
 ### Pattern 3: Multiple spec references
