@@ -4,3 +4,11 @@ description: >
   Adds spec-backed WHY comments to source code and flags undocumented
   behavior (spec gaps) as discussion starters.
 author: hiono
+targets:
+  - opencode
+  - gemini
+  - copilot
+  - claude
+  - cursor
+  - codex
+  - windsurf
