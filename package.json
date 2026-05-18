@@ -1,0 +1,7 @@
+{
+  "name": "spec-why-commenter",
+  "version": "1.0.0",
+  "description": "Adds spec-backed WHY comments to source code and flags undocumented behavior (spec gaps)",
+  "keywords": ["opencode-skill", "documentation", "spec", "comments", "audit"],
+  "license": "MIT"
+}
